@@ -1,10 +1,23 @@
 package com.blz.training;
 
-public class MoodAnalyser 
-  {
+import java.util.Scanner;
+public class MoodAnalyzer 
+{
+	public String analyzeMood(String message) {
+		if (message.contains("Sad"))
+			return "Sad";
+		else
+			return "Happy";
+
+	}
 	public static void main(String[] args) 
-	{
-		System.out.println("Welcome to Mood Analyser Problem");
+	 {
+		Scanner sc = new Scanner(System.in);
+		String message = sc.nextLine();
+
+		MoodAnalyzer obj = new MoodAnalyzer();
+		String result = obj.analyzeMood(message);
+		System.out.println(result);
 	}
 
 }
