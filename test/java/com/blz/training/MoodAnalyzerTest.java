@@ -8,10 +8,16 @@ import junit.framework.Assert;
 
 public class MoodAnalyzerTest {
 
+
 	@Test
-	public void givenNullMoodShouldReturnHappy() {
-		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-		String mood = moodAnalyzer.analyzeMood();
-		Assert.assertEquals("Happy", mood);
+	public void givenNullMoodShouldThrowException() {
+		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("NULL");
+		try {
+			moodAnalyzer.analyzeMood();
+		} catch (MoodAnalysisException e) {
+			// TODO Auto-generated catch block
+			Assert.assertEquals(MoodAnalysisException.MoodAnalysisError.NULL, e.type);
+		}
+
 	}
 }
