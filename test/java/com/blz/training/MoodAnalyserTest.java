@@ -6,13 +6,13 @@
 	import org.junit.Test;
 
 	import junit.framework.Assert;
+	public class MoodAnalyserTest {
 
-	public class MoodAnalyzerTest {
-
+		@SuppressWarnings("deprecation")
 		@Test
-		public void testMoodAnalysis_GivenHappyMood_ReturnHappy() {
-			MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-			String message = moodAnalyzer.analyzeMood("I am in Happy Mood");
-			Assert.assertEquals("Happy", message);
+		public void testMoodAnalysis_GivenSadMood_Constructor_ReturnSad() {
+			MoodAnalyser moodAnalyzer = new MoodAnalyser("I am in Sad Mood");
+			String message = moodAnalyzer.analyseMood();
+			Assert.assertEquals("Sad", message);
 		}
 	}
